@@ -1,0 +1,116 @@
+<div class="inner_page_banner">
+	<div class="container">
+		<div class="row" style="margin-top: 85px;">
+			<div class="col-lg-12">
+				<h2 class="middleof_heading">Post a Job</h2>
+			</div>
+		</div>
+	</div>
+</div> <!-- home banner ends -->
+
+<div class="candidate_dashboard">
+	<div class="change_password">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="right_side_content">
+						<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+							<h2 class="heading_profile">Post a Job</h2>
+							<div *ngIf="title.errors && (title.dirty || title.touched || f.submitted)" class="alert alert-danger">
+								<div *ngIf="title.errors.required">
+									Title is required.
+								</div>
+							</div>
+							<div *ngIf="city.errors && (city.dirty || city.touched || f.submitted)" class="alert alert-danger">
+								<div *ngIf="city.errors.required">
+									City is required.
+								</div>
+							</div>
+							<div *ngIf="state.errors && (state.dirty || state.touched || f.submitted)" class="alert alert-danger">
+								<div *ngIf="state.errors.required">
+									State is required.
+								</div>
+							</div>
+							<div *ngIf="startdate.errors && (startdate.dirty || startdate.touched || f.submitted)" class="alert alert-danger">
+								<div *ngIf="startdate.errors.required">
+									Start Date is required.
+								</div>
+							</div>
+							<div class="box_modal">
+								<div class="row">
+									<div class="col-lg-12">
+										<div class="form-group custom_profile_inputs">
+											<input type="text" class="form-control" placeholder="Job Title" name="title" #title="ngModel" ngModel required />
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group custom_profile_inputs">
+											<input type="text" class="form-control" placeholder="City" name="city" #city="ngModel" ngModel required />
+										</div>
+										<div class="form-group custom_profile_inputs">
+											<!-- <input type="text" class="form-control" placeholder="Start Date" name="startdate" #startdate="ngModel" ngModel/> -->
+											<input type="text" #startdate="ngModel" id="startdate" name="startdate" class="form-control" placeholder="yyyy-mm-dd" ngbDatepicker #d2="ngbDatepicker" (click)="d2.toggle()" ngModel required/>
+										</div>
+										<div class="form-group custom_profile_inputs">
+											<span>Hot:</span>
+											<div class="radio">
+												<label style="padding-right: 20px;"><input style="padding-right: 10px;" type="radio" name="yesno" value="yes" checked ngModel #hot="ngModel">Yes</label>
+												<label style="padding-right: 20px;"><input style="padding-right: 10px;" type="radio" name="yesno" value="no" ngModel #hot="ngModel">No</label>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group custom_profile_inputs">
+											<input type="text" class="form-control" placeholder="State" name="state" #state="ngModel" ngModel required />
+										</div>
+										<div class="form-group custom_profile_inputs">
+											<input type="text" class="form-control" placeholder="Salary" name="salary" #salary="ngModel" ngModel/>
+										</div>
+										<div class="form-group custom_profile_inputs">
+											<input type="number" class="form-control" placeholder="Number of Openings" name="numberofopenings" #numberofopenings="ngModel" ngModel/>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group custom_profile_inputs">
+											<input type="text" class="form-control" placeholder="Company Job ID" name="companyid" #companyid="ngModel" ngModel />
+										</div>
+									</div>
+									<div class="col-lg-12">
+										<div class="form-group">
+											<textarea class="form-control" rows="5" id="comment" placeholder="Description" name="description" #description="ngModel" ngModel></textarea>
+										</div>
+									</div>
+									<div class="col-lg-12">
+										<div class="form-group">
+											<textarea class="form-control" rows="5" id="comment" placeholder="Notes" name="notes" #notes="ngModel" ngModel></textarea>
+										</div>
+									</div>
+								</div>
+							</div>
+							<input type="submit" style="cursor:pointer;" name="getstarted" value="Post a Job" class="btn btn_darkred" *ngIf="!PostajobLoadingBtn"/>
+							<button class="btn btn_darkred" [disabled]="true" *ngIf="PostajobLoadingBtn">
+                                  <i class="fa fa-spinner fa-spin"></i> Loading ...
+                                </button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> <!-- candidate dashboard ends -->
+<div class="body_middle_content">
+  <div class="left_tell">
+    <img src="assets/images/left-graphictan.png">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>Tell Us how we can help</h2>
+        <input type="button" style="cursor:pointer;" name="" (click)="onContactUs()" value="Contact Us" class="btn__custom_primary" />
+      </div>
+    </div>
+  </div>
+  <div class="right_tell">
+    <img src="assets/images/right-graphic-tan.png">
+  </div>
+</div> <!-- body middle content end -->

@@ -1,0 +1,101 @@
+<div class="inner_page_banner">
+    <div class="container">
+        <div class="row" style="margin-top: 85px;">
+            <div class="col-lg-12">
+                <h2 class="middleof_heading">contact Us</h2>
+            </div>
+        </div>
+    </div>
+</div> <!-- home banner ends -->
+
+<div class="candidate_dashboard">
+    <div class="change_password" style="padding: 20px 0px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                        <div class="right_side_content">
+                            <div class="box_modal" style="border-top: 2px solid #761d39;border-bottom: 2px solid #761d39;">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group custom_profile_inputs_contact">
+                                            <label>Your Name</label>
+                                            <input type="text" class="form-control" placeholder="Enter Your Name" name="yourname" #yourname="ngModel" ngModel required/>
+                                        </div>
+                                        <div *ngIf="yourname.errors && (yourname.dirty || yourname.touched || f.submitted)" class="alert alert-danger">
+                                            <div *ngIf="yourname.errors.required">
+                                                Your Name is required.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group custom_profile_inputs_contact">
+                                            <label>Email</label>
+                                            <input type="email" class="form-control" placeholder="you@gmail.com" name="email" #email="ngModel" ngModel required/>
+                                        </div>
+                                        <div *ngIf="email.errors && (email.dirty || email.touched || f.submitted)" class="alert alert-danger">
+                                            <div *ngIf="email.errors.required">
+                                                Email is required.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group custom_profile_inputs_contact">
+                                            <label>Subject</label>
+                                            <input type="text" class="form-control" placeholder="Subject" name="subject" #subject="ngModel" ngModel required/>
+                                        </div>
+                                        <div *ngIf="subject.errors && (subject.dirty || subject.touched || f.submitted)" class="alert alert-danger">
+                                            <div *ngIf="subject.errors.required">
+                                                Subject is required.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group custom_profile_inputs_contact">
+                                            <label>Contact Number</label>
+                                            <input type="text" class="form-control" placeholder="Contact Number" name="contact_number" #contact_number="ngModel" ngModel required/>
+                                        </div>
+                                        <div *ngIf="contact_number.errors && (contact_number.dirty || contact_number.touched || f.submitted)" class="alert alert-danger">
+                                            <div *ngIf="contact_number.errors.required">
+                                                Contact Number is required.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group custom_profile_inputs_contact">
+                                          <label for="comment">Message</label>
+                                          <textarea class="form-control" rows="5" id="comment" placeholder="Type Your Message..." name="message" #message="ngModel" ngModel required></textarea>
+                                        </div>
+                                        <div *ngIf="message.errors && (message.dirty || message.touched || f.submitted)" class="alert alert-danger">
+                                            <div *ngIf="message.errors.required">
+                                                Message is required.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="submit" name="getstarted" value="send message" class="btn btn_block" style="cursor: pointer;" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-2"></div>
+                <!-- <div class="col-lg-3">
+                    <div class="right_side_content">
+                        <div class="box_modal" style="border-top: 2px solid #761d39;border-bottom: 2px solid #761d39;">
+                            <div class="row">
+                                <div class="col-lg-12 right_side_contact">
+                                    <h3>USA</h3>
+                                    <h4 style="text-transform: capitalize;"><i class="fa fa-map-marker" aria-hidden="true"></i> Lorem Ipusm Road</h4>
+                                    <h4><i class="fa fa-phone" aria-hidden="true"></i> 9999-999-99999</h4>
+                                    <h4 style="margin-bottom: 0px;"><i class="fa fa-envelope-o" aria-hidden="true"></i> info@ftehub@com</h4>
+                                </div>
+                            </div>
+                        </div>
+                            
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div> <!-- candidate dashboard ends -->

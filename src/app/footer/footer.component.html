@@ -1,0 +1,49 @@
+<div class="footer">
+    <div class="container">
+        <div class="row footer_row">
+            <div class="col-lg-3">
+                <a routerLink="/"><img src="assets/images/title491739096.png" alt="ftehub logo" style="height: 40px;" /></a>
+            </div>
+            <div class="col-lg-3">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a routerLink="/">Home</a></li>
+                    <li><a routerLink="/about-us">About Us</a></li>
+                    <li><a routerLink="/contact-us">Contact Us</a></li>
+                    <!-- <li *ngIf="!isCustomerAuthenticated()"><a routerLink="/register">Signup/Login</a></li> -->
+                </ul>
+            </div>
+            <div class="col-lg-3" *ngIf="!isCandidateAuthenticated()">
+                <h4>Customer Links</h4>
+                <ul>
+                    <li *ngIf="!isCandidateAuthenticated()"><a routerLink="/register">Signup/Login</a></li>
+                    <li *ngIf="!isCustomerAuthenticated()"><a routerLink="/customer-signin">Login</a></li>
+                    <li *ngIf="!isCustomerAuthenticated()"><a routerLink="/customer-signup">Signup</a></li>
+                    <li *ngIf="isCustomerAuthenticated()"><a routerLink="/customer-profile">My Profile</a></li>
+                    <li *ngIf="isCustomerAuthenticated()"><a routerLink="/post-a-job">Post a Job</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3" *ngIf="!isCustomerAuthenticated()">
+                <h4>Candidate Links</h4>
+                <ul>
+                    <li *ngIf="!isCandidateAuthenticated()"><a routerLink="/register">Signup/Login</a></li>
+                    <li *ngIf="!isCandidateAuthenticated()"><a routerLink="/signin">Login</a></li>
+                    <li *ngIf="!isCandidateAuthenticated()"><a routerLink="/register">Signup</a></li>
+                    <li *ngIf="isCandidateAuthenticated()"><a routerLink="/view-profile">My Profile</a></li>
+                    <li *ngIf="isCandidateAuthenticated()"><a routerLink="/edit-profile">Upload Resume</a></li>
+                    <li><a routerLink="/job-search">Search Jobs</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer ends -->
+<div class="footer_bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h4 class="text-center">&#9400;2019 FTEHUB. All rights reserved. <!-- | <a routerLink="/terms-and-conditions">Terms & Conditions</a> --></h4>
+            </div>
+        </div>
+    </div>
+</div>

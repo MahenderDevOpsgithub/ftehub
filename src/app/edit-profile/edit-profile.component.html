@@ -1,0 +1,128 @@
+<div class="inner_page_banner">
+			<div class="container">
+				<div class="row" style="margin-top: 85px;">
+					<div class="col-lg-12">
+						<h2 class="middleof_heading">candidate dashboard</h2>
+					</div>
+				</div>
+			</div>
+		</div> <!-- home banner ends -->
+
+		<div class="candidate_dashboard">
+			<div class="change_password">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3">
+							<div class="left_Menu">
+								<ul>
+									<li><a routerLink="/view-profile">View Profile</a></li>
+									<li><a routerLink="/edit-profile" class="menu_active">Edit Profile</a></li>
+									<li><a routerLink="/job-orders">Jobs Applied</a></li>
+									<li><a routerLink="/job-search">Job Search</a></li>
+									<li><a routerLink="/candidate-activity">Activity</a></li>
+									<!-- <li><a routerLink="/change-password">Change Password</a></li> -->
+									<li style="cursor:pointer;"><a (click)="logout()">Logout</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-9">
+							<div class="right_side_content">
+								<h2 class="heading_profile">edit profile</h2>
+								<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+									<div class="box_modal">
+										<div class="row">
+											<div class="col-lg-6">
+												<div class="form-group custom_profile_inputs">
+													<input type="text" #firstname="ngModel" [(ngModel)]="userprofile.first_name" required id="firstname" name="firstname" class="form-control" />
+												</div>
+												<div class="form-group custom_profile_inputs">
+													<input type="text" #dateavailable="ngModel" [(ngModel)]="userprofile.date_available" required id="dateavailable" name="dateavailable" class="form-control" placeholder="yyyy-mm-dd" ngbDatepicker #d2="ngbDatepicker" (click)="d2.toggle()"/>
+												</div>
+												<div class="form-group custom_profile_inputs">
+													<select class="form-control" #countrycode="ngModel" [(ngModel)]="userprofile.country_code" required id="countrycode" name="countrycode">
+														<option disabled>Select Country</option>
+														<option value="US">USA</option>
+														<option value="IN">India</option>
+														<option value="CN">Canada</option>
+													</select>
+												</div>
+												<div class="form-group custom_profile_inputs">
+													<select class="form-control" #relocation="ngModel" [(ngModel)]="userprofile.is_willing_to_relocate" required id="relocation" name="relocation">
+														<option disabled>Relocation Status</option>
+														<option value="true">Yes</option>
+														<option value="false">No</option>
+													</select>
+												</div>
+												<div class="form-group custom_profile_inputs">
+													<input type="text" class="form-control" #desiredpay="ngModel" [(ngModel)]="userprofile.desired_pay" required id="desiredpay" name="desiredpay" placeholder="80$/hour" />
+												</div>
+											</div>
+											<div class="col-lg-6">
+												<div class="form-group custom_profile_inputs">
+													<input type="text" class="form-control" #lastname="ngModel" [(ngModel)]="userprofile.last_name" required id="lastname" name="lastname" placeholder="Doe" />
+												</div>
+												
+												<div class="form-group custom_profile_inputs">
+													<input type="text" class="form-control" #city="ngModel" [(ngModel)]="userprofile.address.city" required id="city" name="city" placeholder="Washington" />
+												</div>
+												<div class="form-group custom_profile_inputs">
+													<select class="form-control" #legalstatus="ngModel" [(ngModel)]="legal_status" required id="legalstatus" name="legalstatus">
+														<option disabled>Legal Status</option>
+														<option>US Citizen</option>
+														<option>Green Card</option>
+														<option>Non Immigrant</option>
+													</select>
+												</div>
+												<div class="form-group custom_profile_inputs">
+													<input type="email" class="form-control" #phone="ngModel" [(ngModel)]="userprofile.phones.home" required id="phone" name="phone" placeholder="99123456789" />
+												</div>
+												<div class="form-group custom_profile_inputs">
+													<input type="email" class="form-control" #email="ngModel" [(ngModel)]="userprofile.emails.primary" required id="email" name="email" placeholder="email@gmail.com" readonly/>
+												</div>
+											</div>
+											<div class="col-lg-12">
+												<div class="form-group custom_profile_inputs">
+													<textarea class="form-control" #keyskills="ngModel" [(ngModel)]="userprofile.key_skills" required id="keyskills" name="keyskills" placeholder="Key Skills"></textarea>
+												</div>
+											</div>
+											<div class="col-lg-12">
+												<div class="form-group custom_profile_inputs">
+													<textarea class="form-control" #notes="ngModel" [(ngModel)]="userprofile.notes" required id="notes" name="notes" placeholder="Notes"></textarea>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="box_modal">
+										<h4>curriculum vitae - cv</h4>
+										<div class="row">
+											<div class="col-lg-6">
+												<input type="file" name="file" (change)="fileEvent($event)" accept=".pdf,.doc">
+											</div>
+										</div>
+									</div>
+									<input type="submit" name="getstarted" value="save" class="btn btn_darkred" style="cursor: pointer;" />
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> <!-- candidate dashboard ends -->
+
+<div class="body_middle_content">
+  <div class="left_tell">
+    <img src="assets/images/left-graphictan.png">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>Tell Us how we can help</h2>
+        <input type="button" style="cursor:pointer;" name="" (click)="onContactUs()" value="Contact Us" class="btn__custom_primary" />
+      </div>
+    </div>
+  </div>
+  <div class="right_tell">
+    <img src="assets/images/right-graphic-tan.png">
+  </div>
+</div> <!-- body middle content end -->
+

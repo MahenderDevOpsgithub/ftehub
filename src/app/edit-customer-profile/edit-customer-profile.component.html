@@ -1,0 +1,95 @@
+<div class="inner_page_banner">
+    <div class="container">
+        <div class="row" style="margin-top: 85px;">
+            <div class="col-lg-12">
+                <h2 class="middleof_heading">customer dashboard</h2>
+            </div>
+        </div>
+    </div>
+</div> <!-- home banner ends -->
+
+<div class="candidate_dashboard">
+    <div class="change_password">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="left_Menu">
+                        <ul>
+                            <li><a routerLink="/customer-profile">View Profile</a></li>
+                            <li><a routerLink="/edit-customer-profile" class="menu_active">Edit Profile</a></li>
+                            <li><a routerLink="/post-a-job">Post a Job</a></li>
+                            <li><a routerLink="/customer-change-password">Change Password</a></li>
+                            <li style="cursor:pointer;"><a (click)="logout()">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="right_side_content">
+                        <h2 class="heading_profile">edit profile</h2>
+                        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                            <div *ngIf="firstname.errors && (firstname.dirty || firstname.touched || f.submitted)" class="alert alert-danger">
+                                <div *ngIf="firstname.errors.required">
+                                    First Name is required.
+                                </div>
+                            </div>
+                            <div *ngIf="lastname.errors && (lastname.dirty || lastname.touched || f.submitted)" class="alert alert-danger">
+                                <div *ngIf="lastname.errors.required">
+                                    Last Name is required.
+                                </div>
+                            </div>
+                            <div *ngIf="phone.errors && (phone.dirty || phone.touched || f.submitted)" class="alert alert-danger">
+                                <div *ngIf="phone.errors.required">
+                                    Phonw is required.
+                                </div>
+                            </div>
+                            <div *ngIf="email.errors && (email.dirty || email.touched || f.submitted)" class="alert alert-danger">
+                                <div *ngIf="email.errors.required">
+                                    Email is required.
+                                </div>
+                            </div>
+                            <div class="box_modal">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group custom_profile_inputs">
+                                            <input type="text" class="form-control" #firstname="ngModel" [(ngModel)]="userprofile.response.user.first_name" required id="firstname" name="firstname" placeholder="First Name" />
+                                        </div>
+                                        <div class="form-group custom_profile_inputs">
+                                            <input type="text" class="form-control" #lastname="ngModel" [(ngModel)]="userprofile.response.user.last_name" required id="lastname" name="lastname" placeholder="Last Name" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group custom_profile_inputs">
+                                            <input type="number" class="form-control" #phone="ngModel" [(ngModel)]="userprofile.response.contact_number.number" required id="phone" name="phone" placeholder="99123456789" />
+                                        </div>
+                                        <div class="form-group custom_profile_inputs">
+                                            <input type="email" class="form-control" #email="ngModel" [(ngModel)]="userprofile.response.contact_email.email" required id="email" name="email" placeholder="email@gmail.com" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="submit" name="getstarted" value="save" class="btn btn_darkred" style="cursor: pointer;" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- candidate dashboard ends -->
+
+<div class="body_middle_content">
+  <div class="left_tell">
+    <img src="assets/images/left-graphictan.png">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>Tell Us how we can help</h2>
+        <input type="button" style="cursor:pointer;" name="" (click)="onContactUs()" value="Contact Us" class="btn__custom_primary" />
+      </div>
+    </div>
+  </div>
+  <div class="right_tell">
+    <img src="assets/images/right-graphic-tan.png">
+  </div>
+</div> <!-- body middle content end -->
+

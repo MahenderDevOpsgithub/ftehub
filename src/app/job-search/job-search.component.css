@@ -1,0 +1,26 @@
+.pagination .ngx-pagination .current{
+    background: #fff !important;
+    color: #000 !important;
+    border: 1px solid #ddd !important;
+    top: -16px;
+    position: relative;
+    padding: 5px 15px;
+}
+.pagination .ngx-pagination li a{
+	outline: none !important;
+    padding: 5px 15px;
+}
+.pagination .ngx-pagination li{
+	outline: none !important;
+    font-size: 20px;
+    display: none !important;
+}
+.pagination .ngx-pagination .pagination-previous{
+    display: inline-block !important;
+}
+.pagination .ngx-pagination .current{
+    display: inline-block !important;
+}
+.pagination .ngx-pagination .pagination-next{
+    display: inline-block !important;
+}

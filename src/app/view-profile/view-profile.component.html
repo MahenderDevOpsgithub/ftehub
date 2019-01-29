@@ -1,0 +1,105 @@
+<div class="inner_page_banner">
+    <div class="container">
+        <div class="row" style="margin-top: 85px;">
+            <div class="col-lg-12">
+                <h2 class="middleof_heading">candidate dashboard</h2>
+            </div>
+        </div>
+    </div>
+</div> <!-- home banner ends -->
+
+<div class="candidate_dashboard">
+    <div class="change_password">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="left_Menu">
+                        <ul>
+                            <li><a routerLink="/view-profile" class="menu_active">View Profile</a></li>
+                            <li><a routerLink="/edit-profile">Edit Profile</a></li>
+                            <li><a routerLink="/job-orders">Jobs Applied</a></li>
+                            <li><a routerLink="/job-search">Job Search</a></li>
+                            <li><a routerLink="/candidate-activity">Activity</a></li>
+                            <!-- <li><a routerLink="/change-password">Change Password</a></li> -->
+                            <li style="cursor:pointer;" ><a (click)="logout()">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="right_side_content">
+                        <h2 class="heading_profile">view profile</h2>
+                        <div class="box_modal">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group custom_profile_inputs">
+                                        <label><b>First Name</b></label> : <label>{{ userprofile.first_name }}</label>
+                                    </div>
+                                     <div class="form-group custom_profile_inputs">
+                                        <label><b>Country</b></label> : <label>{{ userprofile.country_code }}</label>
+                                    </div>
+                                    <div class="form-group custom_profile_inputs">
+                                        <label><b>Relocate</b></label> : <label>{{ relocate }}</label>
+                                    </div>
+                                    <div class="form-group custom_profile_inputs">
+                                        <label><b>Desired Pay</b></label> : <label>{{ userprofile.desired_pay }}</label>
+                                    </div>
+                                    <div class="form-group custom_profile_inputs">
+                                       <label><b>Email</b></label> : <label>{{ userprofile.emails.primary }}</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group custom_profile_inputs">
+                                        <label><b>Last Name</b></label> : <label>{{ userprofile.last_name }}</label>
+                                    </div>
+                                    <div class="form-group custom_profile_inputs">
+                                        <label><b>Date Available</b></label> : <label>{{ userprofile.date_available }}</label>
+                                    </div>
+                                     <div class="form-group custom_profile_inputs">
+                                        <label><b>Prefered Location</b></label> : <label>{{ userprofile.address.city }}</label>
+                                    </div>
+                                    <div class="form-group custom_profile_inputs">
+                                        <label><b>Legal Status</b></label> : <label>{{ userprofile._embedded.custom_fields[0]?.value }}</label>
+                                    </div>
+                                    <div class="form-group custom_profile_inputs">
+                                        <label><b>Phone</b></label> : 
+                                        <label *ngIf="userprofile.phones.cell">Cell : {{ userprofile.phones.cell }}</label>
+                                        <label *ngIf="userprofile.phones.home">Home : {{ userprofile.phones.home }}</label>
+                                        <label *ngIf="userprofile.phones.work">Work : {{ userprofile.phones.work }}</label>
+                                        <label *ngIf="!userprofile.phones.cell && !userprofile.phones.home && !userprofile.phones.work">N/A</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group custom_profile_inputs">
+                                       <label><b>Key Skills</b></label> : <label>{{ userprofile.key_skills }}</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group custom_profile_inputs">
+                                       <label><b>Notes</b></label> : <label>{{ userprofile.notes }}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- candidate dashboard ends -->
+
+<div class="body_middle_content">
+  <div class="left_tell">
+    <img src="assets/images/left-graphictan.png">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>Tell Us how we can help</h2>
+        <input type="button" style="cursor:pointer;" name="" (click)="onContactUs()" value="Contact Us" class="btn__custom_primary" />
+      </div>
+    </div>
+  </div>
+  <div class="right_tell">
+    <img src="assets/images/right-graphic-tan.png">
+  </div>
+</div> <!-- body middle content end -->

@@ -1,0 +1,104 @@
+<div class="inner_page_banner">
+    <div class="container">
+        <div class="row" style="margin-top: 85px;">
+            <div class="col-lg-12">
+                <h2 class="middleof_heading">Signup</h2>
+            </div>
+        </div>
+    </div>
+</div> <!-- home banner ends -->
+
+<div class="login_sign_container">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 pad_remove_add_margin_15">
+                <div class="left_container signup_left_container" style="height: 600px;">
+                    <div class="left_content">
+                        <p>Are you a well-qualified with highly skilled job aspirant, and looking for a local full-time job?  Well, you are at the right place. </p>
+                        <p>We understand the critical business needs, complexity of information of our customers. We provide the best talent to your company needs for direct hire.</p>
+                        <h2>Don't have an account? <span>Signup now</span></h2>
+                        <div class="login_sign_btn_block">
+                            <a routerLink="/register"><input type="button" name="" value="Employee Signup" class="btn__custom_primary" style="cursor: pointer;"/></a>
+                        </div>
+                        <div class="login_sign_btn_block">
+                            <a routerLink="/customer-signup"><input type="button" name="getstarted" value="Employer Signup" class="btn btn_darkred" style="cursor: pointer;"/></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 pad_remove_add_margin_15">
+                <div class="right_container" style="height: 600px;">
+                    <div class="inside_content">
+                        <h2 class="mar">candidate account signup</h2>
+                        <div class="form_login_signup">
+                            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                                <div *ngIf="firstname.errors && (firstname.dirty || firstname.touched || f.submitted)" class="alert alert-danger">
+                                    <div *ngIf="firstname.errors.required">
+                                        Firstname is required.
+                                    </div>
+                                </div>
+                                <div class="form-group login_sign_group">
+                                    <i class="fa fa-user-o" aria-hidden="true"></i><input #firstname="ngModel" ngModel required type="firstname" id="firstname" name="firstname" type="text" class="form-control login_signup_inputs" placeholder="Enter your first name..">
+                                </div>
+                                <div *ngIf="lastname.errors && (lastname.dirty || lastname.touched || f.submitted)" class="alert alert-danger">
+                                    <div *ngIf="lastname.errors.required">
+                                        Lastname is required.
+                                    </div>
+                                </div>
+                                <div class="form-group login_sign_group">
+                                    <i class="fa fa-user-o" aria-hidden="true"></i><input #lastname="ngModel" ngModel required type="lastname" id="lastname" name="lastname" type="text" class="form-control login_signup_inputs" placeholder="Enter your last name..">
+                                </div>
+                                <div *ngIf="email.errors && (email.dirty || email.touched || f.submitted)" class="alert alert-danger">
+                                    <div *ngIf="email.errors.required">
+                                        Email is required.
+                                    </div>
+                                </div>
+                                <div class="form-group login_sign_group">
+                                    <i class="fa fa-envelope-o" aria-hidden="true"></i><input #email="ngModel" ngModel required type="email" id="email" name="email" type="email" class="form-control login_signup_inputs" placeholder="Enter email..">
+                                </div>
+                                <div *ngIf="phone.errors && (phone.dirty || phone.touched || f.submitted)" class="alert alert-danger">
+                                    <div *ngIf="phone.errors.required">
+                                        Phone Number is required.
+                                    </div>
+                                </div>
+                                <div class="form-group login_sign_group">
+                                    <i class="fa fa-phone" aria-hidden="true"></i><input #phone="ngModel" ngModel required type="phone" id="phone" name="phone" type="text" class="form-control login_signup_inputs" placeholder="Enter phone number..">
+                                </div>
+                                <div *ngIf="password.errors && (password.dirty || password.touched || f.submitted)" class="alert alert-danger">
+                                    <div *ngIf="password.errors.required">
+                                        Password is required.
+                                    </div>
+                                </div>
+                                <div class="form-group login_sign_group">
+                                    <i class="fa fa-key" aria-hidden="true"></i><input #password="ngModel" ngModel required type="password" id="password" name="password" type="password" class="form-control login_signup_inputs" placeholder="Enter password..">
+                                </div>
+
+                                <button class="btn btn_block login_sign_btn" type="submit" style="cursor: pointer;" *ngIf="!RegisterLoadingBtn" [disabled]="f.form.invalid">register</button>
+                                <button class="btn btn_block login_sign_btn" [disabled]="true" *ngIf="RegisterLoadingBtn">
+                                  <i class="fa fa-spinner fa-spin"></i> Loading ...
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- login ends -->
+
+<div class="body_middle_content">
+  <div class="left_tell">
+    <img src="assets/images/left-graphictan.png">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>Tell Us how we can help</h2>
+        <input type="button" style="cursor:pointer;" name="" (click)="onContactUs()" value="Contact Us" class="btn__custom_primary" />
+      </div>
+    </div>
+  </div>
+  <div class="right_tell">
+    <img src="assets/images/right-graphic-tan.png">
+  </div>
+</div> <!-- body middle content end -->

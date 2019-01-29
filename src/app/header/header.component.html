@@ -1,0 +1,134 @@
+<div class="top_header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="pull-right social_icons">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    <i class="fa fa-youtube" aria-hidden="true"></i>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main_header">
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <h2 class="ft_logo"><a routerLink="/"><img src="assets/images/logo.png" alt="ftehub logo" style="height: 85px;" /></a></h2>
+                </div>
+                <div class="col-lg-9">
+                    <div class="right_side_menus pull-right">
+                        <div *ngIf="!isAuthenticated() || isCandidateAuthenticated()" class="dropdown" style="padding-right:50px;">
+                            <button class="dropbtn">candidate <i class="fa fa-sort-desc" aria-hidden="true"></i></button>
+                            <div class="dropdown-content">
+                                <ul>
+                                    <li *ngIf="!isCandidateAuthenticated()"><a routerLink="/register">Signup</a></li>
+                                    <li *ngIf="!isCandidateAuthenticated()"><a routerLink="/signin">Login</a></li>
+                                    <li *ngIf="isCandidateAuthenticated()"><a routerLink="/view-profile">My Profile</a></li>
+                                    <li *ngIf="isCandidateAuthenticated()"><a routerLink="/edit-profile">Upload Resume</a></li>
+                                    <li><a routerLink="/job-search">Search Jobs</a></li>
+                                    <li *ngIf="isCandidateAuthenticated()" style="cursor:pointer;"><a (click)="logout()">Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div *ngIf="!isAuthenticated() || isCustomerAuthenticated()" class="dropdown" style="margin-right: 50px;">
+                            <button class="dropbtn customerBtn" style="background-color: #313131">customer <i class="fa fa-sort-desc" aria-hidden="true"></i></button>
+                            <div class="dropdown-content">
+                                <ul>
+                                    <li *ngIf="!isCustomerAuthenticated()"><a routerLink="/customer-signup">Signup</a></li>
+                                    <li *ngIf="!isCustomerAuthenticated()"><a routerLink="/customer-signin">Login</a></li>
+                                    <li *ngIf="isCustomerAuthenticated()"><a routerLink="/post-a-job">Post a Job</a></li>
+                                    <li *ngIf="isCustomerAuthenticated()"><a routerLink="/customer-profile">My Profile</a></li>
+                                    <li *ngIf="isCustomerAuthenticated()" style="cursor:pointer;"><a (click)="logout()">Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--<div class="dropdown">
+                            <button class="dropbtn countryBtn"><i class="fa fa-globe faglobe" aria-hidden="true"></i> Select Country <i class="fa fa-sort-desc" aria-hidden="true"></i></button>
+                            <div class="dropdown-content" style="min-width: 188px;">
+                                <ul>
+                                    <li><a routerLink="/">USA</a></li>
+                                    <li><a routerLink="/">INDIA</a></li>
+                                    <li><a routerLink="/">CANADA</a></li>
+                                </ul>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header> <!-- header ends -->
+</div> <!-- main header ends -->
+
+<!-- Header Section Start -->
+    <!--<header id="home" class="hero-area"> 
+      <!-- Navbar Start
+      <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar">
+        <div class="container">
+          <div class="theme-header clearfix">
+            <!-- Brand and toggle get grouped for better mobile display
+            <div class="navbar-header">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <span class="lni-menu"></span>
+                <span class="lni-menu"></span>
+                <span class="lni-menu"></span>
+              </button>
+              <a routerLink="/" class="navbar-brand"><img src="assets/images/jobs/img-1.jpg" alt=""></a>
+            </div>
+            <div class="collapse navbar-collapse" id="main-navbar">
+              <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/about-us">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Candidates
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" routerLink="/browse-jobs">Browse Jobs</a></li>
+                    <li><a class="dropdown-item" routerLink="/browse-categories">Browse Categories</a></li>
+                    <li><a class="dropdown-item" routerLink="/post-a-resume">Add Resume</a></li>
+                    <li><a class="dropdown-item" routerLink="/manage-resumes">Manage Resumes</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Employers
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" routerLink="/post-a-job">Add Job</a></li>
+                    <li><a class="dropdown-item" routerLink="/manage-jobs">Manage Jobs</a></li>
+                    <li><a class="dropdown-item" routerLink="/manage-applications">Manage Applications</a></li>
+                    <li><a class="dropdown-item" routerLink="/browse-resumes">Browse Resumes</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/contact-us">
+                    Contact
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/signin">Sign In</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/register">Sign Up</a>
+                </li>
+                <li class="button-group">
+                  <a routerLink="/post-a-job" class="button btn btn-common">Post a Job</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mobile-menu" data-logo="assets/images/logo-mobile.png"></div>
+      </nav>
+      <!-- Navbar End         
+    </header>-->
+    <!-- Header Section End --> 

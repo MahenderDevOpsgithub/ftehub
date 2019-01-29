@@ -1,0 +1,94 @@
+<div class="home_banner">
+    <div class="container">
+        <div class="row" style="margin-top: 130px;">
+            <div class="col-lg-12 banner_content">
+                <h1>the <span>easiest way</span> to</h1>
+                <h2>get your new job</h2>
+                <div class="form-inline banner_form">
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="searchCriteria" class="form-control" placeholder="Job, Role, Industry, Keywords">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="location" class="form-control" placeholder="Location" (onSelect)="setAddress($event)" google-place>
+                    </div>
+                    <button type="submit" style="cursor:pointer;" (click)="onSearch()" class="btn btn-default banner_search_button">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="left_shade_image">
+        <img src="assets/images/header-shapes.png">
+    </div> -->
+
+</div>
+<!-- home banner ends -->
+<div class="body_content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+              <div class="left_body_image">
+              </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="body_para">
+                    <h2><span>We Are</span> a <span>global leader</span> in Full Time Placements</h2>
+                    <p style="color: #999;font-family: MyriadProLight;font-weight: bold;    margin-bottom: 80px;">FTEHUB is a leader in full time employment staffing in Information technology providing talent to organizations of all sizes. With our staffing experience and our pool of highly qualified Candidates in various technologies with industry experience we can deliver the right talent to the matching need quicker for your organization goals and success. FTEHUB, with its cutting-edge technology, provides relevant profiles to employers and relevant jobs to jobseekers across industry verticals, experience levels and geographies.</p>
+                    <input type="button" name="" (click)="onSeeHow()" value="how it works" class="btn__custom_primary" style="margin-right: 20px;cursor:pointer;" />
+                    <input type="button" name="" (click)="onSeeHow()" value="Learn More About Us" class="btn__default_primary" style="margin-right: 5px;cursor:pointer;" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- body content ends -->
+<div class="body_inner_content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <!-- <div class="bg_left"></div> -->
+                <div class="left_body_part" style="padding-right:150px;padding-top:51px;">
+                    
+                    <div class="div">
+                        <img src="assets/images/noun_Employee_177330.png" alt="noun employee" />
+                        <h2>candidate (employee)</h2>
+                        <p>Are you a well-qualified with highly skilled job aspirant, and looking for a local full-time job?  Well, you are at the right place. </p>
+                        <input type="button" name="seehow" style="cursor:pointer;" (click)="onCandidateSeeHow()" value="get started" class="btn btn_block" />
+                        <div style="clear: both;"></div>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <!-- <div class="bg_right"></div> -->
+                <div class="right_body_part" style="padding-left:150px;">
+                    <div class="div">
+                        <img src="assets/images/noun_Briefcase_861771.png" alt="noun briefcase" />
+                        <h2>customer (employer)</h2>
+                        <p>We understand the critical business needs, complexity of information of our customers. We provide the best talent to your company needs for direct hire.</p>
+                        <input type="button" name="getstarted" style="cursor:pointer;" (click)="onCustomerSeeHow()" value="get started" class="btn btn_darkred" />
+                        <div style="clear: both;"></div>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- body inner content ends -->
+<div class="body_middle_content">
+  <div class="left_tell">
+    <img src="assets/images/left-graphictan.png">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>Tell Us how we can help</h2>
+        <input type="button" name="" (click)="onContactUs()" value="Contact Us" class="btn__custom_primary" />
+      </div>
+    </div>
+  </div>
+  <div class="right_tell">
+    <img src="assets/images/right-graphic-tan.png">
+  </div>
+</div> <!-- body middle content end -->

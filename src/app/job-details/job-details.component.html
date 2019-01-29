@@ -1,0 +1,128 @@
+<div class="inner_page_banner">
+    <div class="container">
+        <div class="row" style="margin-top: 85px;">
+            <div class="col-lg-12">
+                <h2 class="middleof_heading">Job Detail</h2>
+            </div>
+        </div>
+    </div>
+</div> <!-- home banner ends -->
+
+<div class="candidate_dashboard">
+    <div class="change_password">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="right_side_content">
+                        <!-- <h2 class="heading_profile">Job Detail</h2> -->
+                        <div class="box_modal">
+                            <div class="row">
+                                <div class="col-lg-9">
+                                    <h5 class="heading_job_detail" style="margin: 0px;"><span>{{ jobdetails.title }}</span> (#{{ jobdetails.id }})</h5>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div (click)="onApplyNow(jobdetails.id)" class="active_td_btn">
+                                        <h6>Apply Now</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border_bottom"></div>
+                            <div class="list_data_detail">
+                                <div class="list_job">
+                                    <div class="left_job_list location_field">
+                                        <span>Location</span>
+                                    </div>
+                                    <div class="left_job_list dot_detail">
+                                        <span>:</span>
+                                    </div>
+                                    <div class="left_job_list">
+                                        <span>{{ jobdetails.location.city }}</span>
+                                    </div>
+                                    <div style="clear: both;"></div>
+                                </div>
+                                <div class="list_job">
+                                    <div class="left_job_list location_field">
+                                        <span>Description</span>
+                                    </div>
+                                    <div class="left_job_list dot_detail">
+                                        <span>:</span>
+                                    </div>
+                                    <div class="left_job_list Descr">
+                                        <span>{{ jobdetails.title }}</span>
+                                        <span [innerHTML]="jobdetails.description"></span>
+                                    </div>
+                                    <div style="clear: both;"></div>
+                                </div>
+                                <div class="list_job">
+                                    <div class="left_job_list location_field">
+                                        <span>Notes</span>
+                                    </div>
+                                    <div class="left_job_list dot_detail">
+                                        <span>:</span>
+                                    </div>
+                                    <div class="left_job_list">
+                                        <span *ngIf="jobdetails.notes">{{ jobdetails.notes }} </span>
+                                        <span *ngIf="!jobdetails.notes">N/A</span>
+                                    </div>
+                                    <div style="clear: both;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="box_modal">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h5 class="heading_job_detail" style="margin: 0px;"><span>Candidates</span></h5>
+                                </div>
+                            </div>
+                            <div class="border_bottom"></div>
+                            <div class="list_data_detail">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Location</th>
+                                            <th>Source</th>
+                                            <th>Added</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let c of jobapplications._embedded.pipelines">
+                                            <td>{{ c._embedded.candidate.first_name }} {{ c._embedded.candidate.last_name }}</td>
+                                            <td>
+                                                <span *ngIf="c._embedded.candidate.address.city">
+                                                    {{ c._embedded.candidate.address.city }} {{ c._embedded.candidate.address.state }}
+                                                </span>
+                                                <span *ngIf="!c._embedded.candidate.address.city">
+                                                    N/A
+                                                </span>
+                                            </td>
+                                            <td>{{ c._embedded.candidate.source }}</td>
+                                            <td>{{ c.date_created | date: 'longDate' }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- candidate dashboard ends -->
+
+<div class="body_middle_content">
+  <div class="left_tell">
+    <img src="assets/images/left-graphictan.png">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>Tell Us how we can help</h2>
+        <input type="button" style="cursor:pointer;" name="" (click)="onContactUs()" value="Contact Us" class="btn__custom_primary" />
+      </div>
+    </div>
+  </div>
+  <div class="right_tell">
+    <img src="assets/images/right-graphic-tan.png">
+  </div>
+</div> <!-- body middle content end -->
